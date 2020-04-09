@@ -1,0 +1,35 @@
+<h1>Listing Variants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item<th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for variant <- @variants do %>
+    <tr>
+      <td>
+        <%= link "#{variant.item.name}", to: Routes.item_path(@conn, :show, variant.item) %>
+      </td>
+      <td><%= variant.item.brand %></td>
+      <td><%= variant.price %></td>
+      <td><%= variant.size %></td>
+      <td><%= variant.color %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.variant_path(@conn, :show, variant) %></span>
+        <span><%= link "Edit", to: Routes.variant_path(@conn, :edit, variant) %></span>
+        <span><%= link "Delete", to: Routes.variant_path(@conn, :delete, variant), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Variant", to: Routes.variant_path(@conn, :new) %></span>

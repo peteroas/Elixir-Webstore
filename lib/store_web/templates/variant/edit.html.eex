@@ -1,0 +1,5 @@
+<h1>Edit Variant</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.variant_path(@conn, :update, @variant)) %>
+
+<span><%= link "Back", to: Routes.variant_path(@conn, :index) %></span>

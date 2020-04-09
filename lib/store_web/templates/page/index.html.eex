@@ -1,0 +1,12 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "The Webstore" %></h1>
+</section>
+
+<section class="row">
+  <ul>
+    <%= link "Items", to: Routes.item_path(@conn, :index) %>
+    <%= link "Variants", to: Routes.variant_path(@conn, :index) %>
+    <%= link "Orders", to: Routes.order_path(@conn, :index) %>
+    <%= link "Users", to: Routes.user_path(@conn, :index) %>
+  </ul>
+</section>

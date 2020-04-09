@@ -1,0 +1,23 @@
+<h1>Show Variant</h1>
+
+<ul>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @variant.price %>
+  </li>
+
+  <li>
+    <strong>Size:</strong>
+    <%= @variant.size %>
+  </li>
+
+  <li>
+    <strong>Color:</strong>
+    <%= @variant.color %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.variant_path(@conn, :edit, @variant) %></span>
+<span><%= link "Back", to: Routes.variant_path(@conn, :index) %></span>
